@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+.calculator {
+    width: 360px;
+    padding: 25px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, .5), -5px -5px 15px rgba(255, 255, 255, .05);
+}
+
+
+#display {
+    width: 100%;
+    height: 80px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 2rem;
+    text-align: right;
+    color: #00ff88;
+    background: #111827;
+    margin-bottom: 20px;
+    box-shadow: inset 5px 5px 10px #000;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+button {
+    height: 65px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+    background: #1f2937;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .4), -2px -2px 5px rgba(255, 255, 255, .05);
+    transition: .2s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.equal {
+    background: #00b894;
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+
+/* toggle  */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    font-size: 1.3rem;
+    transition: .3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    color: #f97316;
+}
+
+
+/* LIGHT MODE */
+body.light {
+    background: linear-gradient(135deg, #fff7ed, #ffedd5);
+}
+
+body.light .theme-toggle {
+    background: #ffffff;
+    color: #f97316;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+}
+
+body.light #themeIcon {
+    color: #f97316;
+}
+
+body.light .theme-toggle i {
+    color: #f97316;
+}
+
+body.light .calculator {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, .15);
+}
+
+body.light .calculator h2 {
+    color: #ea580c;
+}
+
+body.light #display {
+    background: #ffffff;
+    color: #ea580c;
+    box-shadow: inset 2px 2px 8px rgba(0, 0, 0, .1);
+}
+
+body.light button {
+    background: #fed7aa;
+    color: #7c2d12;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .1);
+}
+
+body.light button:hover {
+    background: #fdba74;
+}
+
+body.light .equal {
+    background: #f97316;
+    color: white;
+}
+
+/* responsive */
+   /* TABLET */
+
+@media (max-width: 768px) {
+
+    .calculator {
+        width: 90%;
+        max-width: 350px;
+        padding: 20px;
+    }
+
+    #display {
+        height: 70px;
+        font-size: 1.7rem;
+        padding: 15px;
+    }
+
+    button {
+        height: 60px;
+        font-size: 1.1rem;
+    }
+
+    .theme-toggle {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+        top: 15px;
+        right: 15px;
+    }
+}
+
+   /* MOBILE */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .calculator {
+        width: 100%;
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    #display {
+        height: 65px;
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+
+    button {
+        height: 55px;
+        font-size: 1rem;
+        border-radius: 12px;
+    }
+
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+   /* SMALL MOBILE */
+
+@media (max-width: 350px) {
+
+    .calculator {
+        padding: 15px;
+    }
+
+    #display {
+        font-size: 1.3rem;
+        height: 60px;
+    }
+
+    button {
+        height: 50px;
+        font-size: .9rem;
+    }
+
+}
